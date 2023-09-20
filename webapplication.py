@@ -76,26 +76,5 @@ def main():
 if __name__ == '__main__':
     main()
 
-    # Setting Application title
-    st.title('Youtube Subscriber Churn Prediction')
-
-    Gender = st.selectbox('Select the gender:', ('Male', 'Female'))
-    Genre = st.selectbox('Select the genre:', ('Sports', 'Series', 'Education', 'Entertainment'))
-    NumOfVideo = st.text_input('The number of videos watched:')
-    Like_Dislike = st.text_input('Whether the video is liked(1) or disliked(0):')
-    IsActiveMember = st.text_input('Is the subscriber active(1) or not(0):')  # Corrected the variable name here
-    Age = st.text_input('Enter the age:')
-    Streamedtime = st.text_input('Enter the streamed time of the subscriber:')
-
-    # Code for prediction
-    diagnosis = ''
-    
-    # Creating a button for prediction
-    if st.button('Predict'):
-        diagnosis = churn_prediction([Gender, Genre, NumOfVideo, Like_Dislike, IsActiveMember, Age, Streamedtime])
-    st.success(diagnosis)
-
-if __name__ == '__main__':
-    main()
 
 
