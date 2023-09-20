@@ -6,7 +6,7 @@ import os
 import requests
 
 # Define the URL of the raw pickle file in your GitHub repository
-github_raw_url = 'https://github.com/Abisini12/youtube_churn_prediction/blob/0f765108e8feb101efa920cbe4f23455c1377ea3/logisticfinal_model.pkl'
+github_raw_url = 'https://github.com/Abisini12/youtube_churn_prediction/blob/44e93a556ce136a6e1dae8e8df38906c816f9a80/logisticfinal_model.pkl'
 
 # Fetch the raw content of the pickle file from GitHub
 response = requests.get(github_raw_url)
@@ -16,7 +16,7 @@ if response.status_code == 200:
     pickle_content = response.content
     
     # Deserialize the pickle content into the model
-    loaded_model = pickle.loads(pickle_content)
+    loaded_model = pickle.load(pickle_content)
     
     # Now, you can use the loaded model as needed
 else:
