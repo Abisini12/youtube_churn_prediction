@@ -4,8 +4,29 @@ import numpy as np
 import pickle
 import os
 
-model_path = 'logisticfinal_model.pkl' # Update this to the correct path if needed
-loaded_model = pickle.load(model_path)
+import pickle
+import requests
+import io
+
+# Define the URL of the raw pickle file in your GitHub repository
+github_raw_url = 'https://github.com/Abisini12/youtube_churn_prediction/blob/0f765108e8feb101efa920cbe4f23455c1377ea3/logisticfinal_model.pkl'
+
+# Fetch the raw content of the pickle file from GitHub
+response = requests.get(github_raw_url)
+
+if response.status_code == 200:
+    # Load the pickle content from the response
+    pickle_content = response.content
+    
+    # Deserialize the pickle content into the model
+    loaded_model = pickle.load(pickle_content)
+    
+    # Now, you can use the loaded model as needed
+else:
+    print("Failed to fetch the pickle file from GitHub")
+
+#model_path = 'logisticfinal_model.pkl' # Update this to the correct path if needed
+#loaded_model = pickle.load(model_path)
 
 # Function to preprocess input data and make predictions
 def churn_prediction(input_data):
