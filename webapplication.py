@@ -31,20 +31,26 @@ else:
 # Function to preprocess input data and make predictions
 def churn_prediction(input_data):
     # Map 'Gender' and 'Genre' to numerical values using one-hot encoding
-    gender_mapping = {'Male': 0, 'Female': 1}
-    genre_mapping = {'Sports': 0, 'Series': 1, 'Education': 2, 'Entertainment': 3}  # Update with your genre categories
+    #gender_mapping = {'Male': 0, 'Female': 1}
+    #genre_mapping = {'Sports': 0, 'Series': 1, 'Education': 2, 'Entertainment': 3}  # Update with your genre categories
 
     # Preprocess input data
-    gender = gender_mapping.get(input_data[0], 0)  # Default to 0 if not found in mapping
-    genre = genre_mapping.get(input_data[1], 0)  # Default to 0 if not found in mapping
+    #gender = gender_mapping.get(input_data[0], 0)  # Default to 0 if not found in mapping
+    #genre = genre_mapping.get(input_data[1], 0)  # Default to 0 if not found in mapping
     num_of_videos = float(input_data[2])
     like_dislike = float(input_data[3])
     is_active_member = float(input_data[4])
     age = float(input_data[5])
     streamed_time = float(input_data[6])
 
+    # Ensure all values are of numeric data types
+    input_data = [float(val) for val in input_data]
+
+    input_data_as_numpy_array = np.asarray(input_data)
+    
+
     # Create a NumPy array with the preprocessed data
-    input_data_as_numpy_array = np.array([gender, genre, num_of_videos, like_dislike, is_active_member, age, streamed_time])
+    #input_data_as_numpy_array = np.array([gender, genre, num_of_videos, like_dislike, is_active_member, age, streamed_time])
 
     # Reshape the data and make the prediction
     input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
