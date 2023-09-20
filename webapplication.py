@@ -5,7 +5,7 @@ import pickle
 import os
 
 model_path = 'logisticfinal_model.pkl' # Update this to the correct path if needed
-loaded_model = pickle.load(modelpath)
+loaded_model = pickle.load(model_path)
 
 # Function to preprocess input data and make predictions
 def churn_prediction(input_data):
