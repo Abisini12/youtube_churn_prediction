@@ -6,8 +6,7 @@ import os
 import requests
 
 # Define the URL of the raw pickle file in your GitHub repository
-github_raw_url = 'https://github.com/Abisini12/youtube_churn_prediction/blob/44e93a556ce136a6e1dae8e8df38906c816f9a80/logisticfinal_model.pkl'
-
+github_raw_url = 'https://github.com/Abisini12/youtube_churn_prediction/blob/8e1dc009bef7e09d8347e873618d8272a8179ec0/logisticfinal_model.pkl'
 # Fetch the raw content of the pickle file from GitHub
 response = requests.get(github_raw_url)
 
@@ -20,7 +19,7 @@ if response.status_code == 200:
     
     # Now, you can use the loaded model as needed
 else:
-    st.error("Failed to fetch the pickle file from GitHub")
+    print("Failed to fetch the pickle file from GitHub")
 
 # Create a function for prediction
 def churn_prediction(input_data):
