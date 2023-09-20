@@ -37,13 +37,13 @@ def churn_prediction(input_data):
         age = float(input_data[5])
         streamed_time = float(input_data[6])
 
-    input_data_as_numpy_array = np.array([gender, genre, num_of_videos, like_dislike, is_active_member, age, streamed_time])
-    input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
-    prediction = loaded_model.predict(input_data_reshaped)
-    if prediction[0] == 0:
-        return 'The subscriber is predicted as not leaving the channel..'
-    else:
-        return 'The subscriber is predicted to unsubscribe the channel..'
+        input_data_as_numpy_array = np.array([gender, genre, num_of_videos, like_dislike, is_active_member, age, streamed_time])
+        input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
+        prediction = loaded_model.predict(input_data_reshaped)
+        if prediction[0] == 0:
+         return 'The subscriber is predicted as not leaving the channel..'
+        else:
+         return 'The subscriber is predicted to unsubscribe the channel..'
 
 def main():
     # Setting Application title
