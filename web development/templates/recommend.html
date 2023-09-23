@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='rec.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <p>
+            <h1>
+                We can recommend to change your channel by using 
+            </h1>
+        </p>
+    </header>
+    <!-- Display the pie chart here -->
+    <img src="{{ url_for('static', filename='duration.png') }}">
+    <img src="{{ url_for('static', filename='genderlike.png') }}">
+    <img src="{{ url_for('static', filename='maxvideo.png') }}">
+    <img src="{{ url_for('static', filename='averlike.png') }}">
+    <img src="{{ url_for('static', filename='avgviews.png') }}">
+   <div style="width: 45px;"> <img src="{{ url_for('static', filename='uploadyear.png') }}"></div>
+</body>
+
+<h2 style="font-size: 22px; text-align: center;">🙂Recommendation🙂</h2>
+<pre style="font-size: 19px;">
+    1. Individual creators dominate the top 10 YouTube channels, surpassing companies🙂.
+    2. Gender distribution shows an equal number of male and company channels, outnumbering female channels two to one🙂.
+    3. Despite lower view counts, female creators receive significantly more likes for their videos🙂.
+    4. The music industry occupies a majority of the top channels, amassing the highest views across categories🙂.
+    5. Videos of short duration (2-10 minutes) and super-long videos (over an hour) gather the most likes on average🙂.
+    6. 1440p quality videos lead in average views, followed by 720p🙂.
+    7. Average video views have declined over the past five years, with videos from 2017, 2015, 2014, and 2013 outperforming recent years🙂.</pre>
+</html>
